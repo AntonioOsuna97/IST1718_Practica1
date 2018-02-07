@@ -31,6 +31,7 @@ public class ServletPractica1 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		requestHeader(request,response);
+		
 	}
 
 
@@ -39,7 +40,7 @@ public class ServletPractica1 extends HttpServlet {
 	}
 
 	
-	//Creamos una clase que nos permita obtener las cabeceras de petición HTTP
+	//Creamos un método que nos permita obtener las cabeceras de petición HTTP
 	public void requestHeader(HttpServletRequest req, HttpServletResponse res) throws IOException {
 				//
 		        PrintWriter out = res.getWriter();
