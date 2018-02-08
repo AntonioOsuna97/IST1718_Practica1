@@ -46,6 +46,7 @@ public class ServletPractica1 extends HttpServlet {
 				//Esta clase imprime representaciones formateadas de objetos en una secuencia de salida de texto.
 		        PrintWriter out = res.getWriter();
 		        
+		        out.write("\n\nCabeceras de petición: ");
 		        //Interfaz Enumeration: Un objeto que implementa la interfaz Enumeration permite generar series de elementos
 		        //Enumeración llamada headerNames a la que le asignamos las distintas cabeceras sin su valor
 		        Enumeration<String> headerNames = req.getHeaderNames();
@@ -70,6 +71,22 @@ public class ServletPractica1 extends HttpServlet {
 		            }
 
 		        }
+		        
+		        //********************* PARTE OPCIONAL ****************************+
+		        out.write("\n\nMétodos adicionales: \n");
+		        //Metodo empleado
+		        String metodo = req.getMethod();
+		        out.write("Tipo de petición: " + metodo);
+		        
+		        //URL
+		        StringBuffer metodo2 = req.getRequestURL();
+		        out.write("\nURL: " + metodo2);
+		       
+		        //Nombre del servidor
+		        String metodo3 = req.getServerName();
+		        out.write("\nNombre del servidor: " + metodo3);
+		     
+		        
 		        //Cerramos salida.
 		        out.close();
 
